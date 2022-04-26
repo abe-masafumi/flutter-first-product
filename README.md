@@ -17,6 +17,8 @@ samples, guidance on mobile development, and a full API reference.
 
 ----
 
+[doc](https://docs.flutter.dev/search?q=navigate)
+
 ## use
 
 [元々xcodeでの使用が主流だったがvscodeでも使用できたため使い慣れているvscodeで使用する](https://qiita.com/apricotcomic/items/7ff53950e10fcff212d2)
@@ -65,3 +67,10 @@ Doctor summary (to see all details, run flutter doctor -v):
 
 ! Doctor found issues in 2 categories.
 ```
+
+###
+
+[firebase cli の説明](https://zenn.dev/pressedkonbu/articles/deploy-flutter-web-app-with-firebase-hosting)
+
+[firebaseの初期化](https://firebase.google.com/docs/cli?hl=ja#macos)
+
