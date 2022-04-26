@@ -68,9 +68,15 @@ Doctor summary (to see all details, run flutter doctor -v):
 ! Doctor found issues in 2 categories.
 ```
 
-###
+### cliの環境構築
 
 [firebase cli の説明](https://zenn.dev/pressedkonbu/articles/deploy-flutter-web-app-with-firebase-hosting)
 
 [firebaseの初期化](https://firebase.google.com/docs/cli?hl=ja#macos)
 
+### vscodeでのホットリロード
+
+デバックでの実行のみホットリロードに対応
+毎回の起動に時間がかかるのでデバックで実行がおすすめ
+
+※ XCodeで実行するのもいいかも(めんどくさい)
