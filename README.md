@@ -74,9 +74,45 @@ Doctor summary (to see all details, run flutter doctor -v):
 
 [firebaseの初期化](https://firebase.google.com/docs/cli?hl=ja#macos)
 
+```
+'on':
+  push:
+    branches:
+      - main <--- master に変更
+```
+
 ### vscodeでのホットリロード
 
 デバックでの実行のみホットリロードに対応
 毎回の起動に時間がかかるのでデバックで実行がおすすめ
 
 ※ XCodeで実行するのもいいかも(めんどくさい)
+
+### 今のところ不便なところ
+
+1.
+使用端末iphone12-でgooglechromeでデプロイしたfirebaseリンクを開くとバグる。まずUIがおかしくなる、ボタンクリックも反応しない。[こちら](https://www.amazon.co.jp/-/en/gp/video/detail/B09PRQJVB2/ref=atv_wl_hom_c_unkc_1_9?language=en)
+
+2.
+flutterのレンダリングと描画が特殊なので文字をコピーできない
+
+対処法
+[参考資料](https://qiita.com/sekitaka_1214/items/24f021605ef4961c746e)
+
+### firebaseとflutterの連携
+
+[firebase_core](https://pub.dev/packages/firebase_core)
+
+[Initializing FlutterFire](https://firebase.flutter.dev/docs/overview/)
+
+```
+Firebase configuration file lib/firebase_options.dart generated successfully with the following Firebase apps:
+
+Platform  Firebase App Id
+web       1:356844505654:web:adfd5e908abdd5e522a697
+android   1:356844505654:android:ec7906ea548b095c22a697
+ios       1:356844505654:ios:677b6c08071e761d22a697
+
+Learn more about using this file in the FlutterFire documentation:
+ > https://firebase.flutter.dev/docs/cli
+ ```
