@@ -105,6 +105,9 @@ flutterのレンダリングと描画が特殊なので文字をコピーでき�
 
 [Initializing FlutterFire](https://firebase.flutter.dev/docs/overview/)
 
+[ステップ 3: Firebase 構成ファイルを追加する](https://firebase.google.com/docs/flutter/setup?platform=ios)
+[ステップ 3: Firebase 構成ファイルを追加する-webの場合](https://firebase.google.com/docs/projects/learn-more#config-files-objects)
+
 ```
 Firebase configuration file lib/firebase_options.dart generated successfully with the following Firebase apps:
 
@@ -116,3 +119,17 @@ ios       1:356844505654:ios:677b6c08071e761d22a697
 Learn more about using this file in the FlutterFire documentation:
  > https://firebase.flutter.dev/docs/cli
  ```
+
+ ### コマンド
+
+```bash
+flutter build web
+```
+
+```bash
+flutter run
+```
+
+```bash
+flutter packages get
+```
