@@ -25,32 +25,20 @@ class MyApp extends StatelessWidget {
         // This is the theme of your application.
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  // firestoreのdocから追記して"FirebaseFirestore"のimport
+// 余計なコードを削除してfirebase_storeとコネクト
+class MyHomePage extends StatelessWidget {
   final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance.collection('pets-info-01').snapshots();
-
   @override
-  Widget build(BuildContext context) {
-
+    Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         // headerのtitleの指定
-        title: Text(widget.title),
+        title: Text("firebase-data一覧"),
       ),
       body: StreamBuilder<QuerySnapshot>(
       stream: _usersStream,
@@ -58,11 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
         if (snapshot.hasError) {
           return Text('Something went wrong');
         }
-
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Text("Loading");
         }
-
         return ListView(
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
           Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
@@ -77,4 +63,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
