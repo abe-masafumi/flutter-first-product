@@ -133,3 +133,7 @@ flutter run
 ```bash
 flutter packages get
 ```
+
+### 英語表記のサイト
+
+[firebase plugins](https://firebase.flutter.dev/)
