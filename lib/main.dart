@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_application_1/page1.dart';
+import 'package:flutter_application_1/booklist/page1.dart';
 // ignore: unused_import
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +41,11 @@ class MyApp extends StatelessWidget {
 //       appBar: AppBar(
 //         // headerのtitleの指定
 //         title: Text("firebase-data一覧"),
+//         actions: [
+//           IconButton(onPressed: () {
+//             // 画面遷移
+//           }, icon: Icon(Icons.person))
+//         ],
 //       ),
 //       body: StreamBuilder<QuerySnapshot>(
 //       stream: _usersStream,
@@ -51,14 +56,16 @@ class MyApp extends StatelessWidget {
 //         if (snapshot.connectionState == ConnectionState.waiting) {
 //           return Text("Loading");
 //         }
-//         return ListView(
-//           children: snapshot.data!.docs.map((DocumentSnapshot document) {
-//           Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-//             return ListTile(
-//               title: Text(data['名前']),
-//               subtitle: Text(data['誕生日']),
-//             );
-//           }).toList(),
+//         return Container(
+//           child: ListView(
+//             children: snapshot.data!.docs.map((DocumentSnapshot document) {
+//             Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+//               return ListTile(
+//                 title: Text(data['名前']),
+//                 subtitle: Text(data['誕生日']),
+//               );
+//             }).toList(),
+//           ),
 //         );
 //       },
 //      ),

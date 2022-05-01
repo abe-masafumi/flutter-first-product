@@ -137,3 +137,10 @@ flutter packages get
 ### 英語表記のサイト
 
 [firebase plugins](https://firebase.flutter.dev/)
+
+### 必要な実装
+
+fontの設定
+ページ遷移
+データベース連結（crud）
+検索
