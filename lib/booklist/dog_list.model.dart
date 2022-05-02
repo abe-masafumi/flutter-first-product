@@ -17,9 +17,10 @@ class DogListModel extends ChangeNotifier {
         // firebaseのデータ取得(日本語でもok) 注意！！一つでもデータが入っていないとNUll扱いになる
         final String name = data["名前"];
         final String birthday = data["誕生日"];
+
         return Dog(name, birthday);
       }).toList();
-
+ 
       this.dogs = dogs;
       // 終わりの宣言
       notifyListeners();

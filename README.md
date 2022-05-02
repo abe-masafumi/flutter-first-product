@@ -144,3 +144,34 @@ fontの設定
 ページ遷移
 データベース連結（crud）
 検索
+
+
+### アイコンの追加方法
+
+[設定](https://api.flutter.dev/flutter/material/Icons-class.html)
+
+[アイコンの探し方](https://zenn.dev/tama8021/articles/dbc931e23120bb)
+
+```dart
+  こんな感じ
+  appBar: AppBar(
+    // headerのtitleの指定
+    title: Text("firebase-data一覧"),
+    actions: [
+      Container(
+        margin:  EdgeInsets.only(right: 50),
+        child: Icon(
+        Icons.arrow_circle_right_sharp,
+        color: Colors.blue,
+        size: 30.0,
+      ),
+      )
+    ],
+  ),
+```
+
+
+
+### AppBarの編集
+
+[appbarの編集](https://zenn.dev/sugitlab/articles/e68b2fce02e50f)
