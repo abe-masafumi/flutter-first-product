@@ -138,6 +138,8 @@ flutter packages get
 
 [firebase plugins](https://firebase.flutter.dev/)
 
+[firestore clud処理](https://firebase.flutter.dev/docs/firestore/usage/)
+
 ### 必要な実装
 
 fontの設定
@@ -175,3 +177,58 @@ fontの設定
 ### AppBarの編集
 
 [appbarの編集](https://zenn.dev/sugitlab/articles/e68b2fce02e50f)
+
+### memo
+
+
+```
+class MyHomePage extends StatelessWidget {
+  final Stream<QuerySnapshot> _usersStream =
+      FirebaseFirestore.instance.collection('pets-info-01').snapshots();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // headerのメニュー
+        // leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+        title: Text('新規登録'),
+        centerTitle: true,
+
+        actions: [
+          IconButton(icon: Icon(Icons.search), onPressed: () {}),
+          IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
+        ],
+        // appbarの透明感
+        elevation: 1,
+        // backgroundColor: Color.fromARGB(0, 230, 226, 226),
+        // appbarに写真を追加
+        flexibleSpace: Image.network(
+          '../images/image01.png',
+          fit: BoxFit.cover,
+        ),
+        //  ここで高さを指定してあげるとまた雰囲気が変わります
+        toolbarHeight: 100,
+        backgroundColor: Colors.transparent,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(onSurface: Colors.red),
+              child: Text('次のページ'),
+              onPressed: () {
+                // ここにボタンを押した時に呼ばれるコードを書く
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NextPage()),
+                );
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+```

@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 import 'dog_list.model.dart';
 
-class MyHomePage extends StatelessWidget {
+class Page01 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<DogListModel>(
@@ -14,7 +14,7 @@ class MyHomePage extends StatelessWidget {
       child: Scaffold(
       appBar: AppBar(
         // headerのメニュー
-        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+        // leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
         title: Text('ここにページの名前'),
         centerTitle: true,
       
@@ -38,7 +38,8 @@ class MyHomePage extends StatelessWidget {
 
       // bodyの始まる位置がappbarの下になる
         extendBodyBehindAppBar:true,
-        body: Center(child: Consumer<DogListModel>(
+        body: Center(
+          child: Consumer<DogListModel>(
           builder: (context, model, child) {
             final List<Dog>? dogs = model.dogs;
 
@@ -56,6 +57,7 @@ class MyHomePage extends StatelessWidget {
                 .toList();
             return ListView(
               children: widgets,
+
             );
           },
         ),)

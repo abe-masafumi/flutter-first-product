@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/domain/dog.dart';
 
+// データの全てを表示
 class DogListModel extends ChangeNotifier {
   // _usersStream >> 変化した時に発火
   final Stream<QuerySnapshot> _usersStream =
@@ -25,5 +26,30 @@ class DogListModel extends ChangeNotifier {
       // 終わりの宣言
       notifyListeners();
     });
+  }
+}
+
+// 一度だけデータの全てを表示（リロード時に最新になる）
+class DogListModelSingle extends ChangeNotifier {
+  // _usersStream >> 変化した時に発火
+  final _userCollection =
+      FirebaseFirestore.instance.collection('pets-info-01');
+
+  List<Dog>? dogs;
+
+  void fetchDogList() async {
+    final QuerySnapshot snapshot = await _userCollection.get();
+    final List<Dog> dogs = snapshot.docs.map((DocumentSnapshot document) {
+        Map<String, dynamic> data = document.data() as Map<String, dynamic>;
+        // firebaseのデータ取得(日本語でもok) 注意！！一つでもデータが入っていないとNUll扱いになる
+        final String name = data["名前"];
+        final String birthday = data["誕生日"];
+
+        return Dog(name, birthday);
+      }).toList();
+ 
+      this.dogs = dogs;
+      // 終わりの宣言
+      notifyListeners();
   }
 }
