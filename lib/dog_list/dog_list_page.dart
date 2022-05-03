@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/domain/dog.dart';
 import 'package:provider/provider.dart';
 
-import 'dog_list.model.dart';
+import 'dog_list_model.dart';
 
-class Page01 extends StatelessWidget {
+class DogListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<DogListModel>(
